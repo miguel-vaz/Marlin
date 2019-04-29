@@ -75,8 +75,8 @@
  * THERMAL_PROTECTION_HYSTERESIS and/or THERMAL_PROTECTION_PERIOD
  */
 #if ENABLED(THERMAL_PROTECTION_HOTENDS)
-  #define THERMAL_PROTECTION_PERIOD 40        // Seconds
-  #define THERMAL_PROTECTION_HYSTERESIS 4     // Degrees Celsius
+  #define THERMAL_PROTECTION_PERIOD 60        // Seconds
+  #define THERMAL_PROTECTION_HYSTERESIS 10    // Degrees Celsius
 
   /**
    * Whenever an M104, M109, or M303 increases the target temperature, the
@@ -98,13 +98,13 @@
  * Thermal Protection parameters for the bed are just as above for hotends.
  */
 #if ENABLED(THERMAL_PROTECTION_BED)
-  #define THERMAL_PROTECTION_BED_PERIOD 20    // Seconds
-  #define THERMAL_PROTECTION_BED_HYSTERESIS 2 // Degrees Celsius
+  #define THERMAL_PROTECTION_BED_PERIOD 60    // Seconds
+  #define THERMAL_PROTECTION_BED_HYSTERESIS 5 // Degrees Celsius
 
   /**
    * As described above, except for the bed (M140/M190/M303).
    */
-  #define WATCH_BED_TEMP_PERIOD 60                // Seconds
+  #define WATCH_BED_TEMP_PERIOD 180               // Seconds
   #define WATCH_BED_TEMP_INCREASE 2               // Degrees Celsius
 #endif
 
@@ -128,7 +128,7 @@
  * Also, if the temperature is set to a value below mintemp, it will not be changed by autotemp.
  * On an Ultimaker, some initial testing worked with M109 S215 B260 F1 in the start.gcode
  */
-#define AUTOTEMP
+//#define AUTOTEMP
 #if ENABLED(AUTOTEMP)
   #define AUTOTEMP_OLDWEIGHT 0.98
 #endif
@@ -281,7 +281,7 @@
 
 // If you want endstops to stay on (by default) even when not homing
 // enable this option. Override at any time with M120, M121.
-//#define ENDSTOPS_ALWAYS_ON_DEFAULT
+#define ENDSTOPS_ALWAYS_ON_DEFAULT
 
 // @section extras
 
